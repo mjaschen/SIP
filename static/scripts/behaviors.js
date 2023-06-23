@@ -18,13 +18,13 @@ function updateClock() { // Controls time and date clock.
 	*/
 
 	if (timeFormat) {
-		jQuery("#deviceTime span.time").html((now.getHours() < 10 ? "0" : "") + now.getHours() + "<span class='sep'>:</span>" + (now.getMinutes() < 10 ? "0" : "") + now.getMinutes());
-		jQuery("#deviceTime span.ampm").html("");
+		jQuery("#deviceTime .time").html((now.getHours() < 10 ? "0" : "") + now.getHours() + "<span class='sep'>:</span>" + (now.getMinutes() < 10 ? "0" : "") + now.getMinutes());
+		jQuery("#deviceTime .ampm").html("");
 	} else {
-		jQuery("#deviceTime span.time").html((now.getHours()%12 == 0 ? "12" : now.getHours() % 12) + "<span class='sep'>:</span>" + (now.getMinutes() < 10 ? "0" : "") + now.getMinutes());
-		jQuery("#deviceTime span.ampm").html((now.getHours() >= 12 ? "pm" : "am"));
+		jQuery("#deviceTime .time").html((now.getHours()%12 == 0 ? "12" : now.getHours() % 12) + "<span class='sep'>:</span>" + (now.getMinutes() < 10 ? "0" : "") + now.getMinutes());
+		jQuery("#deviceTime .ampm").html((now.getHours() >= 12 ? "pm" : "am"));
 	}
-	jQuery("#deviceTime span.second").text(":" + (now.getSeconds() < 10 ? "0" : "") + now.getSeconds());
+	jQuery("#deviceTime .second").text(":" + (now.getSeconds() < 10 ? "0" : "") + now.getSeconds());
 
 	jQuery("#deviceDate").text(dateString(now));
 }
