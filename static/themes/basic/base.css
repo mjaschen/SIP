@@ -6,6 +6,15 @@
  - navy: #2E3959
 */
 
+:root {
+    --color-body: #fff;
+    --color-bg: #ccc;
+    --color-primary: #2E3959;
+    --color-secondary: #05ae35;
+    --color-footer: #2E3959;
+    --color-header: #2E3959;
+}
+
 @font-face {
   font-family: Quicksand;
   src: url(./fonts/Quicksand-Regular.ttf);
@@ -33,7 +42,7 @@
 body {
 	margin:0px;
 	padding:0px;
-	background-color:#397F19;
+	background-color: var(--color-bg);
 	font-family: 'Helvetica', sans-serif;
 	font-size:12pt;
   -moz-text-size-adjust: none;
@@ -45,10 +54,14 @@ div, p {
 /******** Overall Layout Styles **********/
 
 div.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 	background-image: url('logo.png');
 	background-repeat: no-repeat;
 	background-position: 64px 8px;
-	background-color: #32A620;
+	background-color: var(--color-header);
 	height:80px;
 }
 
@@ -74,7 +87,7 @@ div.footer {
 	background-image: url(grass.jpg);
 	background-position: top right -220px;
 	background-repeat: no-repeat;
-	background-color: #32A620;
+	background-color: var(--color-footer);
 	color:white;
 	text-align: right;
 	padding: 16px 160px 16px 50px;
@@ -91,11 +104,10 @@ div.body {
 	margin:0px;
 	margin-bottom: -20px;
 	padding:0px;
-	background-image: url(grass.jpg);
+    background-color: var(--color-bg);
 }
 
 div.panel {
-	margin-left: 240px;
 	padding:12px;
 	background-color: white;
 }
@@ -165,16 +177,12 @@ span.stationName:last-child:after {
 /******** Clock Styles **********/
 
 div#status {
-	float:left;
 	width: 240px;
 	text-align:center;
 	color:white;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 300;
-/* 	font-weight: light; */
-	padding-top: 23px;
-	padding-bottom: 12px;
-	background-color: #397F19;
+	background-color: var(--color-secondary);
 	opacity: .85;
 }
 #deviceTime span {
@@ -691,13 +699,10 @@ td.stationSchedule {
     }
 
    div#status {
-      float: none;
-      width: 100%;
       padding: 0;
       display: inline-block;
    }
    #deviceTime {
-      float: left;
    }
    #deviceTime span.time {
       font-size: 22pt;
@@ -720,7 +725,6 @@ td.stationSchedule {
       left: -55px;
    }
    #deviceDate {
-      float: right;
       padding: 0 5px 5px 5px;
    }
 
